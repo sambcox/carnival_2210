@@ -18,4 +18,8 @@ class Visitor
   def tall_enough(height_req)
     @height >= height_req
   end
+
+  def board_ride
+    @spending_money = (spending_money - 1).to_s.prepend('$')
+  end
 end
