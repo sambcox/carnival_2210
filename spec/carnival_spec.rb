@@ -27,4 +27,8 @@ RSpec.describe Visitor do
     expect(carnival).to be_a Carnival
     expect(carnival.rides).to eq([])
   end
+
+  it 'can return the duration of the carnival' do
+    expect(carnival.duration).to eq 194
+  end
 end
