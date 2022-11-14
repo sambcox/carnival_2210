@@ -19,7 +19,7 @@ class Visitor
     @height >= height_req
   end
 
-  def board_ride
-    @spending_money = (spending_money - 1).to_s.prepend('$')
+  def board_ride(admission_fee)
+    @spending_money = (spending_money - admission_fee).to_s.prepend('$')
   end
 end
