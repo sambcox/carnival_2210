@@ -31,4 +31,12 @@ RSpec.describe Visitor do
   it 'can return the duration of the carnival' do
     expect(carnival.duration).to eq 194
   end
+
+  it 'can add rides' do
+    carnival.add_ride(ride1)
+    carnival.add_ride(ride2)
+    carnival.add_ride(ride3)
+
+    expect(carnival.rides).to eq([ride1, ride2, ride3])
+  end
 end
