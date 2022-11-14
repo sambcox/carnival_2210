@@ -19,4 +19,8 @@ class Ride
       @rider_log[rider] = 1
     end
   end
+
+  def total_rides
+    @rider_log.values.sum
+  end
 end

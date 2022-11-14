@@ -15,4 +15,10 @@ class Carnival
   def add_ride(ride)
     @rides.push(ride)
   end
+
+  def most_popular
+    @rides.max_by do |ride|
+      ride.total_rides
+    end
+  end
 end

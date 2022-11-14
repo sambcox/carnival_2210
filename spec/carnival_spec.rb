@@ -41,6 +41,10 @@ RSpec.describe Visitor do
   end
 
   it 'can return its most popular ride' do
+    carnival.add_ride(ride1)
+    carnival.add_ride(ride2)
+    carnival.add_ride(ride3)
+
     expect(carnival.most_popular).to eq(ride1)
   end
 end
