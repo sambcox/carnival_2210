@@ -39,4 +39,8 @@ RSpec.describe Visitor do
 
     expect(carnival.rides).to eq([ride1, ride2, ride3])
   end
+
+  it 'can return its most popular ride' do
+    expect(carnival.most_popular).to eq(ride1)
+  end
 end
