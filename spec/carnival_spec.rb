@@ -66,4 +66,18 @@ RSpec.describe Visitor do
 
     expect(carnival.total_carnival_revenue).to eq 15
   end
+
+  it 'can return a hash with a full carnival summary' do
+    carnival.add_ride(ride1)
+    carnival.add_ride(ride2)
+    carnival.add_ride(ride3)
+    ride3.board_rider(visitor3)
+
+    expect(carnival.summary).to eq({
+      :visitor_count => 3,
+      :revenue_earned => 15,
+      :visitors => {visitor1 => {:favorite_ride => ride1, :total_spent => 7}, visitor2 => {:favorite_ride => ride1, :total_spent => 1}, visitor3 => {:favorite_ride => ride3, :total_spent => 9}},
+      :ride_list => {ride1 => {:riders => [visitor1, visitor2], :revenue => 3}, ride2 => {:riders => [visitor1, visitor3], :revenue => 10}, ride3 => {:riders => [visitor3], :revenue => 2}}
+      })
+  end
 end
