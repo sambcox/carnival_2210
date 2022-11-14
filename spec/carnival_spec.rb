@@ -15,6 +15,7 @@ RSpec.describe Visitor do
     visitor2.add_preference(:gentle)
     visitor2.add_preference(:thrilling)
     visitor3.add_preference(:thrilling)
+    visitor3.add_preference(:gentle)
     ride1.board_rider(visitor1)
     ride1.board_rider(visitor2)
     ride1.board_rider(visitor1)
