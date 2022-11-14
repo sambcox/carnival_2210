@@ -5,4 +5,8 @@ class Visitor
     @height = height
     @spending_money = spending_money
   end
+
+  def spending_money
+    @spending_money.delete('$').to_i
+  end
 end
