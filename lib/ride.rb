@@ -12,5 +12,10 @@ class Ride
   def board_rider(rider)
     rider.board_ride
     @total_revenue += 1
+    if @rider_log[rider]
+      @rider_log[rider] += 1
+    else
+      @rider_log[rider] = 1
+    end
   end
 end
