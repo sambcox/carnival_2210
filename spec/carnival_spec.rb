@@ -18,7 +18,7 @@ RSpec.describe Visitor do
     ride1.board_rider(visitor1)
     ride1.board_rider(visitor2)
     ride1.board_rider(visitor1)
-    ride2.board_rider(visitor2)
+    ride2.board_rider(visitor3)
     ride2.board_rider(visitor1)
     ride3.board_rider(visitor1)
     ride3.board_rider(visitor2)
