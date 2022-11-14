@@ -7,6 +7,7 @@ RSpec.describe Visitor do
     expect(visitor).to be_a Visitor
     expect(visitor.name).to eq('Bruce')
     expect(visitor.height).to eq 54
+    expect(visitor.preferences).to eq([])
   end
 
   it 'returns spending money as an integer' do
