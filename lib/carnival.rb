@@ -11,4 +11,8 @@ class Carnival
   def duration
     @end_date - @start_date
   end
+
+  def add_ride(ride)
+    @rides.push(ride)
+  end
 end
