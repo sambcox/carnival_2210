@@ -7,4 +7,8 @@ class Carnival
     @end_date = Date.parse(end_date)
     @rides = []
   end
+
+  def duration
+    @end_date - @start_date
+  end
 end
