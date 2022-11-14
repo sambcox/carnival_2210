@@ -13,4 +13,10 @@ RSpec.describe Visitor do
   it 'returns spending money as an integer' do
     expect(visitor.spending_money).to eq(10)
   end
+
+  it 'can add preferences' do
+    visitor.add_preference(:gentle)
+    visitor.add_preference(:water)
+    expect(visitor.preferences).to eq([:gentle, :water])
+  end
 end
