@@ -75,9 +75,9 @@ RSpec.describe Visitor do
 
     expect(carnival.summary).to eq({
       :visitor_count => 3,
-      :revenue_earned => 15,
+      :revenue_earned => 17,
       :visitors => {visitor1 => {:favorite_ride => ride1, :total_spent => 7}, visitor2 => {:favorite_ride => ride1, :total_spent => 1}, visitor3 => {:favorite_ride => ride3, :total_spent => 9}},
-      :ride_list => {ride1 => {:riders => [visitor1, visitor2], :revenue => 3}, ride2 => {:riders => [visitor1, visitor3], :revenue => 10}, ride3 => {:riders => [visitor3], :revenue => 2}}
+      :ride_list => {ride1 => {:riders => [visitor1, visitor2], :revenue => 3}, ride2 => {:riders => [visitor3, visitor1], :revenue => 10}, ride3 => {:riders => [visitor3], :revenue => 4}}
       })
   end
 end
