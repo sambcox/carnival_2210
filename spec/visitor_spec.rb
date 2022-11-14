@@ -1,22 +1,31 @@
 require './lib/visitor'
 
 RSpec.describe Visitor do
-  let(:visitor) { Visitor.new('Bruce', 54, '$10') }
+  let(:visitor1) { Visitor.new('Bruce', 54, '$10') }
+  let(:visitor2) { Visitor.new('Bruce', 54, '$10') }
+  let(:visitor3) { Visitor.new('Bruce', 54, '$10') }
 
   it 'exists and has attributes' do
-    expect(visitor).to be_a Visitor
-    expect(visitor.name).to eq('Bruce')
-    expect(visitor.height).to eq 54
-    expect(visitor.preferences).to eq([])
+    expect(visitor1).to be_a Visitor
+    expect(visitor1.name).to eq('Bruce')
+    expect(visitor1.height).to eq 54
+    expect(visitor1.preferences).to eq([])
   end
 
   it 'returns spending money as an integer' do
-    expect(visitor.spending_money).to eq(10)
+    expect(visitor1.spending_money).to eq(10)
   end
 
   it 'can add preferences' do
-    visitor.add_preference(:gentle)
-    visitor.add_preference(:water)
-    expect(visitor.preferences).to eq([:gentle, :water])
+    visitor1.add_preference(:gentle)
+    visitor1.add_preference(:water)
+    expect(visitor1.preferences).to eq([:gentle, :water])
+  end
+
+  it 'can check if a visitor is tall enough for a height' do
+    expect(visitor1.tall_enough(54)).to eq true
+    expect(visitor2.tall_enough(54)).to eq false
+    expect(visitor3.tall_enough(54)).to eq true
+    expect(visitor1.tall_enough(64)).to eq false
   end
 end
