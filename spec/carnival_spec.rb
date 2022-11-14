@@ -57,4 +57,12 @@ RSpec.describe Visitor do
 
     expect(carnival.most_profitable).to eq(ride2)
   end
+
+  it 'can return total revenue from all rides' do
+    carnival.add_ride(ride1)
+    carnival.add_ride(ride2)
+    carnival.add_ride(ride3)
+
+    expect(carnival.total_carnival_revenue).to eq 15
+  end
 end
